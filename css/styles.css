@@ -1,0 +1,36 @@
+* body {
+  font-family: sans-serif;
+  background: #16A085;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F4D03F, #16A085);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F4D03F, #16A085); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.title-row {
+  border-bottom: 1px solid #ccc;
+  margin-top: 3%;
+}
+
+h1 {
+  font-size: 48px;
+  text-shadow: 1px 1px #fff;
+}
+
+.submit {
+  background-color: darkorange;
+}
+
+#posts a {
+  font-size: 20px;
+}
+
+#posts {
+  text-shadow: 1px 1px #d8945a;
+}
+
+.cat-pic {
+  width:500px;
+  height: 300px;
+  margin-top: 10%;
+  border-radius: 2%
+}
