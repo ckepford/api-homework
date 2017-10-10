@@ -1,5 +1,6 @@
-getReq('https://www.reddit.com/r/php/search.json?q=cats&limit=5', processAjax);
-getReq('https://www.reddit.com/r/php/search.json?q=dogs&limit=5', processAjax);
+let query = 'cats';
+getReq('https://www.reddit.com/r/php/search.json?q=' + query + '&limit=5', processAjax);
+
 
 const newPosts = [];
 function getReq(url, callback){
@@ -47,13 +48,14 @@ function loadData() {
     animalPost.appendChild(item);
     console.log(post.url);
 	})
-  let button = document.querySelector('.submit');
-  button.addEventListener('click', function(e) {
-    e.preventDefault();
-    if(button.value){
-    //if submit button is clicked
-    //grab reddit dog posts
-    //run through loadData function so it will post to html
-  }
-});
 }
+
+var button = document.querySelector('.submit');
+var input = document.querySelector('.input-box');
+button.addEventListener('click', function(e) {
+  e.preventDefault();
+  if (input.value){
+    query = input.value;
+    loadData();
+}
+});
