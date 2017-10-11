@@ -2,7 +2,7 @@ let query = 'cats';
 getReq('https://www.reddit.com/r/php/search.json?q=' + query + '&limit=5', processAjax);
 
 
-const newPosts = [];
+let newPosts = [];
 function getReq(url, callback){
     var req = new XMLHttpRequest();
     req.open('GET', url);
@@ -40,13 +40,12 @@ function loadData() {
 	newPosts.forEach(post => {
 		// Manipulate the data here!
     let animalPost = document.getElementById('posts');
-    let link = document.createElement('a');
-    let item = document.createElement('li');
+    let link = document.querySelector('.link');
+    let item = document.querySelector('.item');
     link.textContent = post.title;
     link.setAttribute('href', post.url)
     item.appendChild(link);
     animalPost.appendChild(item);
-    console.log(post.url);
 	})
 }
 
@@ -54,8 +53,8 @@ var button = document.querySelector('.submit');
 var input = document.querySelector('.input-box');
 button.addEventListener('click', function(e) {
   e.preventDefault();
-  if (input.value){
+    newPosts = [];
     query = input.value;
-    loadData();
-}
+    getReq('https://www.reddit.com/r/php/search.json?q=' + query + '&limit=5', processAjax);
+    input.value = '';
 });
